@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content%}
+	{% for post in posts %}
+		<h1>{{post.Title}}</h1>
+		<p>By {{post.Author}}, written on {{post.Date}}</p>
+		<p>{{post.Content}}</p>
+	{% endfor %}
+{% endblock content%}
+
+<!--
+
+If we did not resuse code with templates (layout.html), we would have to create the html file for every page. 
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title>Flask Blog - {{title}}</title>
+	{% else %}
+	<title>Flask Blog</title>
+	{% endif %}
+</head>
+<body>
+	{% for post in posts %}
+		<h1>{{post.title}}</h1>
+		<p>By {{post.Author}}, written on {{post.Date}}</p>
+		<p>{{post.Content}}</p>
+	{% endfor %}
+</body>
+</html>
+
+-->
+
+<!-- Since we are inheriting layout.html, we only need to write what is different-->
